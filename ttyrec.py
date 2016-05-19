@@ -1,5 +1,5 @@
 import os
-
+import struct
 
 class ttyrec():
     def __init__(self, path):
@@ -13,7 +13,6 @@ class ttyrec():
     def parse(self):
         """Parse the ttyrec file."""
         size = os.stat(self.path).st_size
-        import struct
 
         fh = open(self.path, "rb")
         current_pos = 0
